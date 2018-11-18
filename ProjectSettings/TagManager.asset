@@ -59,3 +59,9 @@ TagManager:
   - name: Foreground
     uniqueID: 2266688479
     locked: 0
+  - name: skull
+    uniqueID: 1950928535
+    locked: 0
+  - name: eyes
+    uniqueID: 3359759525
+    locked: 0
