@@ -7,20 +7,24 @@ public class TimerEvent : MonoBehaviour
     public float time = 1;
     public bool repeat = false;
     public int zomb = 0;
+    public int zombiesToSpawn;
+    public static int round = 1;
+    public static int numzombs;
     public UnityEvent onTimerComplete;
     private void Start()
     {
-
+        zombiesToSpawn = round * 4;
+        numzombs = (zombiesToSpawn*2)-1;
         {
             if (repeat)
             {
                 InvokeRepeating("OnTimerComplete", 0, time);
-                zomb += 1;
+                
             }
             else
             {
                 Invoke("OnTimerComplete", time);
-                zomb += 1;
+                
             }
         }
 
@@ -28,12 +32,17 @@ public class TimerEvent : MonoBehaviour
         }
         private void OnTimerComplete()
         {
+        
+        if(zombiesToSpawn != zomb)
+        {
             onTimerComplete.Invoke();
             zomb += 1;
-        if (zomb >= 5)
+        }else if (zombiesToSpawn == zomb)
         {
             CancelInvoke();
         }
+        
+        
     }
     }
     

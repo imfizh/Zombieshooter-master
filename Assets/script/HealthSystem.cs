@@ -10,6 +10,8 @@ public class HealthSystem : MonoBehaviour
     public UnityEvent onDie;
     public OnDamagedEvent onDamaged;
     public GameObject player;
+    public delegate void SendRound(int theRound);
+    public static event SendRound OnSendRound;
     public void TakeDamage(int damage)
     {
         health -= damage;
@@ -20,6 +22,15 @@ public class HealthSystem : MonoBehaviour
             if(player == null)
             {
                 Destroy(gameObject);
+                if(TimerEvent.numzombs != 0)
+                {
+                    TimerEvent.numzombs -= 1;
+                }
+                else
+                {
+                    OnSendRound(TimerEvent.round);
+                }
+                
             }
             
         }

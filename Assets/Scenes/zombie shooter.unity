@@ -300,6 +300,7 @@ MonoBehaviour:
   time: 6
   repeat: 1
   zomb: 0
+  zombiesToSpawn: 0
   onTimerComplete:
     m_PersistentCalls:
       m_Calls:
@@ -942,6 +943,7 @@ MonoBehaviour:
   time: 6
   repeat: 1
   zomb: 0
+  zombiesToSpawn: 0
   onTimerComplete:
     m_PersistentCalls:
       m_Calls:
@@ -2635,6 +2637,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 650292228}
   scoreText: {fileID: 1810116136}
+  roundText: {fileID: 88054784}
+  round: 1
   playerScore: 0
 --- !u!114 &1804109043
 MonoBehaviour:
