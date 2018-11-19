@@ -39,9 +39,13 @@ public class TimerEvent : MonoBehaviour
             zomb += 1;
         }else if (zombiesToSpawn == zomb)
         {
-            CancelInvoke();
+            //CancelInvoke();
+            GetComponent<TimerEvent>().enabled = false;
         }
-        
+        if(numzombs == 0)
+        {
+            GetComponent<TimerEvent>().enabled = true;
+        }
         
     }
     }
