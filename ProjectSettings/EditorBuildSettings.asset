@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/zombie shooter.unity
     guid: 285016741136c2945ae48b499caaa1dd
+  - enabled: 1
+    path: Assets/Scenes/end screen.unity
+    guid: e4fd97afb93941e49a657d9ac32e4dda
   m_configObjects: {}

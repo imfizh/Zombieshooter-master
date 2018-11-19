@@ -9,6 +9,7 @@ public class HealthSystem : MonoBehaviour
     public int health = 10;
     public UnityEvent onDie;
     public OnDamagedEvent onDamaged;
+    public GameObject player;
     public void TakeDamage(int damage)
     {
         health -= damage;
@@ -16,7 +17,11 @@ public class HealthSystem : MonoBehaviour
         if (health < 1)
         {
             onDie.Invoke();
-            Destroy(gameObject);
+            if(player == null)
+            {
+                Destroy(gameObject);
+            }
+            
         }
     }
 }

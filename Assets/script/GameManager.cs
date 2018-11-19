@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     }
     public void EndGame()
     {
-        SceneManager.LoadScene("end game");
+        SceneManager.LoadScene("end screen");
     }
     public void BackToMainMenu()
     {
