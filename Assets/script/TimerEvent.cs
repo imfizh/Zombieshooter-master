@@ -13,6 +13,7 @@ public class TimerEvent : MonoBehaviour
     public UnityEvent onTimerComplete;
     private void Start()
     {
+        
         zombiesToSpawn = round * 4;
         numzombs = (zombiesToSpawn*2)-1;
         {
@@ -44,7 +45,10 @@ public class TimerEvent : MonoBehaviour
         }
         if(numzombs == 0)
         {
+            
             GetComponent<TimerEvent>().enabled = true;
+            zomb = 0;
+            Start();
         }
         
     }
