@@ -35,5 +35,6 @@ public class GameUI : MonoBehaviour
         round += theRound;
         roundText.text = "ROUND: " + round.ToString();
         TimerEvent.round += 1;
+        
     }
 }
