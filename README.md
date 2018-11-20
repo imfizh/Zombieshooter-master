@@ -1,9 +1,9 @@
 # Zombieshooter-master
-Luke Pettitt
--0022201503
--BSc (Hons) Computing & Games Development 
--AINT155 Games Workshop
--Unity 2D Zombie Shooter
+Luke Pettitt <br />
+0022201503 <br />
+BSc (Hons) Computing & Games Development <br />
+AINT155 Games Workshop <br />
+Unity 2D Zombie Shooter <br />
 Assets used:
 - https://www.freepik.com/free-vector/dark-hand-drawn-skull-background_1188049.htm#term=skull&page=1&position=0
 - https://www.clipartmax.com/middle/m2i8N4K9N4N4i8d3_brains-clipart-front-brain-front-view-png/
