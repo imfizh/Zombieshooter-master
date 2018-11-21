@@ -30,7 +30,7 @@ public class GameUI : MonoBehaviour
         playerScore += theScore;
         scoreText.text = "POINTS: " + playerScore.ToString();
     }
-    private void UpdateRound(int theRound)
+    public void UpdateRound(int theRound)
     {
         round += theRound;
         roundText.text = "ROUND: " + round.ToString();

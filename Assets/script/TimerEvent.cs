@@ -13,44 +13,44 @@ public class TimerEvent : MonoBehaviour
     public UnityEvent onTimerComplete;
     private void Start()
     {
-        
-        zombiesToSpawn = round * 4;
-        numzombs = (zombiesToSpawn*2)-1;
-        {
-            if (repeat)
-            {
-                InvokeRepeating("OnTimerComplete", 0, time);
-                
-            }
-            else
-            {
-                Invoke("OnTimerComplete", time);
-                
-            }
-        }
-
-
-        }
-        private void OnTimerComplete()
-        {
-        
+        Initialize();
+    }
+    private void OnTimerComplete()
+    {
         if(zombiesToSpawn != zomb)
         {
             onTimerComplete.Invoke();
             zomb += 1;
-        }else if (zombiesToSpawn == zomb)
-        {
-            //CancelInvoke();
-            GetComponent<TimerEvent>().enabled = false;
         }
-        if(numzombs == 0)
+        else if (zombiesToSpawn == zomb)
         {
-            
-            GetComponent<TimerEvent>().enabled = true;
-            zomb = 0;
-            Start();
+            CancelInvoke("OnTimerComplete");
         }
+      if(numzombs == 0)
+        {
+            Initialize();
+        } 
+        
         
     }
+    public void Initialize()
+    {
+        zomb = 0;
+        zombiesToSpawn = round * 4;
+        numzombs = (zombiesToSpawn * 2) - 1;
+        {
+            if (repeat)
+            {
+                InvokeRepeating("OnTimerComplete", 0, time);
+
+            }
+            else
+            {
+                Invoke("OnTimerComplete", time);
+
+            }
+        }
     }
-    
+}
+    
+
