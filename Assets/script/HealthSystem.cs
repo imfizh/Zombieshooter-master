@@ -23,13 +23,14 @@ public class HealthSystem : MonoBehaviour
             if(player == null)
             {
                 Destroy(gameObject);
-                if (TimerEvent.numzombs != 0)
+                if (TimerEvent.numzombs != 1)
                 {
                     TimerEvent.numzombs -= 1;
                     
                 }
                 else
                 {
+                    TimerEvent.roundOVER = true;
                     OnSendRound(TimerEvent.round);
                     
                 }
