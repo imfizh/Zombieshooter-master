@@ -13,13 +13,13 @@ public class GameUI : MonoBehaviour
     {
         Player.OnUpdateHealth += UpdateHealthBar;
         AddScore.OnSendScore += UpdateScore;
-        HealthSystem.OnSendRound += UpdateRound;
+        //HealthSystem.OnSendRound += UpdateRound;
     }
     private void OnDisable()
     {
         Player.OnUpdateHealth -= UpdateHealthBar;
         AddScore.OnSendScore -= UpdateScore;
-        HealthSystem.OnSendRound += UpdateRound;
+        //HealthSystem.OnSendRound += UpdateRound;
     }
     private void UpdateHealthBar(int health)
     {
@@ -34,7 +34,7 @@ public class GameUI : MonoBehaviour
     {
         round += theRound;
         roundText.text = "ROUND: " + round.ToString();
-        TimerEvent.round += 1;
+        //TimerEvent.round += 1;
         
     }
 }
