@@ -13,7 +13,7 @@ public class GameUI : MonoBehaviour
     {
         Player.OnUpdateHealth += UpdateHealthBar;
         AddScore.OnSendScore += UpdateScore;
-        //HealthSystem.OnSendRound += UpdateRound;
+        RoundController.OnSendRound += UpdateRound;
     }
     private void OnDisable()
     {

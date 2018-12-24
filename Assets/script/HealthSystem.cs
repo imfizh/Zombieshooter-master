@@ -10,8 +10,6 @@ public class HealthSystem : MonoBehaviour
     public UnityEvent onDie;
     public OnDamagedEvent onDamaged;
     public GameObject player;
-    //public delegate void SendRound(int theRound);
-    //public static event SendRound OnSendRound;
 
     public void TakeDamage(int damage)
     {
@@ -22,19 +20,7 @@ public class HealthSystem : MonoBehaviour
             onDie.Invoke();
             if(player == null)
             {
-                Destroy(gameObject);
-                //if (TimerEvent.numzombs != 1)
-                //{
-                //    TimerEvent.numzombs -= 1;
-                    
-                //}
-                //else
-                //{
-                //    TimerEvent.roundOVER = true;
-                //    OnSendRound(TimerEvent.round);
-                    
-                //}
-                
+                Destroy(gameObject); 
             }
             
         }

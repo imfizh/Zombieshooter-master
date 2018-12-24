@@ -6,8 +6,9 @@ using UnityEngine.Events;
 public class RoundController : MonoBehaviour {
 
     public int totalZombies = 3;
-    
-
+    public delegate void SendScore(int theRound);
+    public static event SendScore OnSendRound;
+    public int Round = 1;
     public UnityEvent onRoundComplete;
 
 	public void SpawnZombie ()
@@ -19,11 +20,17 @@ public class RoundController : MonoBehaviour {
 
         spawner.GetComponent<Spawner>().Spawn();
         
-        if(totalZombies < 1)
+        if (totalZombies < 1)
         {
             // when all zombies spawned
             onRoundComplete.Invoke();
             
         }
     }
+    public void boi()
+    {
+        totalZombies = 4;
+        OnSendRound(Round);
+    }
+    
 }
