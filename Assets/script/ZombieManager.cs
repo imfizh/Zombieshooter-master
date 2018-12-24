@@ -25,6 +25,8 @@ public class ZombieManager : MonoBehaviour {
             onAllZombiesKilled.Invoke();
             CancelInvoke("CheckNumberOfZombies");
             print("all zombies deaded");
+            
+            
         }
     }
 }
