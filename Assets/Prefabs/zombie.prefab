@@ -40,11 +40,13 @@ GameObject:
   - component: {fileID: 50546868057521780}
   - component: {fileID: 58563960782003896}
   - component: {fileID: 114248866445303702}
-  - component: {fileID: 114631486885994550}
-  - component: {fileID: 114104540462292422}
   - component: {fileID: 114017966361511394}
   - component: {fileID: 114437125630505740}
   - component: {fileID: 114274504221764408}
+  - component: {fileID: 114339375158128826}
+  - component: {fileID: 114095948914165496}
+  - component: {fileID: 114749194861323544}
+  - component: {fileID: 114144908783500460}
   m_Layer: 9
   m_Name: zombie
   m_TagString: Untagged
@@ -142,8 +144,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabToSpawn: {fileID: 1802932219087254, guid: f818f41f81034d047acd1bbaf378fd42,
     type: 2}
+  parent: {fileID: 0}
   adjustmentAngle: 90
---- !u!114 &114104540462292422
+--- !u!114 &114095948914165496
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -151,12 +154,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 1848063617680158}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6550d3ce84d363142bb468f71c78d624, type: 3}
+  m_Script: {fileID: 11500000, guid: 847a14d4dc9cc43679ab34fc78e0182f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 2
+  repathRate: 0.5
+  canSearch: 1
+  canMove: 1
+  speed: 2
+  orientation: 1
+  enableRotation: 1
+  rotationSpeed: 10
+  interpolatePathSwitches: 1
+  switchPathInterpolationSpeed: 5
+  targetCompatibility: {fileID: 0}
+--- !u!114 &114144908783500460
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1848063617680158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baf598868d811414d88aff09024f3a17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  smoothing: 20
-  adjustmentAngle: 270
 --- !u!114 &114248866445303702
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -212,6 +235,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: OnDamagedEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  player: {fileID: 0}
 --- !u!114 &114274504221764408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -238,6 +262,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   resetTime: 0.25
+--- !u!114 &114339375158128826
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1848063617680158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
 --- !u!114 &114437125630505740
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -252,18 +303,7 @@ MonoBehaviour:
   onSpawn:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114631486885994550}
-        m_MethodName: SetTarget
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 114104540462292422}
+      - m_Target: {fileID: 114144908783500460}
         m_MethodName: SetTarget
         m_Mode: 0
         m_Arguments:
@@ -276,7 +316,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: EnemySpawnedEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!114 &114631486885994550
+--- !u!114 &114749194861323544
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -284,11 +324,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1848063617680158}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2059bf88a2b3dad48a880a2de2e6c69d, type: 3}
+  m_Script: {fileID: 11500000, guid: cb6a34d769a1e4ac7b0b30e433aa443c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  speed: 2
+  version: 1
+  smoothType: 0
+  subdivisions: 2
+  iterations: 2
+  strength: 0.5
+  uniformLength: 0
+  maxSegmentLength: 2
+  bezierTangentLength: 0.4
+  offset: 0.2
+  factor: 0.1
 --- !u!212 &212460912498758448
 SpriteRenderer:
   m_ObjectHideFlags: 1
