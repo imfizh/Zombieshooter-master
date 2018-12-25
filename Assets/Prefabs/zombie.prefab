@@ -352,6 +352,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabToSpawn: {fileID: 1512597728513622, guid: af0e24058b8010a48b10da5687ff47dd,
     type: 2}
+  prefabToSpawn2: {fileID: 1592744352024098, guid: 464ec48e64fb22f4d9669f34aee251c4,
+    type: 2}
   parent: {fileID: 0}
   adjustmentAngle: 0
 --- !u!114 &114749194861323544

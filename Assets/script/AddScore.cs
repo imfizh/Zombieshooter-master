@@ -15,6 +15,10 @@ public class AddScore : MonoBehaviour {
         {
             if (!scoreSent)
             {
+                if (DoublePoints.Dubpoints == true)
+                {
+                    OnSendScore(DeathScore * 2);
+                }
                 scoreSent = true;
                 OnSendScore(DeathScore);
             }
@@ -22,6 +26,10 @@ public class AddScore : MonoBehaviour {
     }
         public void Points()
     {
+        if (DoublePoints.Dubpoints == true)
+        {
+            OnSendScore(score * 2);
+        }
         OnSendScore(score);
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class Drops : MonoBehaviour {
 
     public GameObject prefabToSpawn;
-
+    public GameObject prefabToSpawn2;
     public Transform parent;
 
     public float adjustmentAngle = 0;
@@ -16,10 +16,11 @@ public class Drops : MonoBehaviour {
     public void Spawn()
     {
         
-        int numb = Random.Range(0, 11);
+        int numb = Random.Range(0, 2);
         print(numb);
-        if (numb == 10) {
-            
+        if (numb == 10)
+        {
+
             Vector3 rotationInDegrees = transform.eulerAngles;
             rotationInDegrees.z += adjustmentAngle;
             Quaternion rotationInRadians = Quaternion.Euler(rotationInDegrees);
@@ -32,9 +33,26 @@ public class Drops : MonoBehaviour {
             {
                 Instantiate(prefabToSpawn, transform.position, rotationInRadians, parent);
             }
+        }
+            if (numb == 1)
+            {
 
+                Vector3 rotationInDegrees = transform.eulerAngles;
+                rotationInDegrees.z += adjustmentAngle;
+                Quaternion rotationInRadians = Quaternion.Euler(rotationInDegrees);
+
+                if (parent == null)
+                {
+                    Instantiate(prefabToSpawn2, transform.position, rotationInRadians);
+                }
+                else
+                {
+                    Instantiate(prefabToSpawn2, transform.position, rotationInRadians, parent);
+                }
+
+            }
         }
     }
-}
+
 
 

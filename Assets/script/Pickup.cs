@@ -37,7 +37,8 @@ public enum PickupType
     Damage,
     Invincible,
     AttackSpeed,
-    MoveSpeed
+    MoveSpeed,
+    Points
 }
 
 public class Pickup : MonoBehaviour
@@ -119,6 +120,9 @@ public class Pickup : MonoBehaviour
              */
             case PickupType.MoveSpeed:
                 other.gameObject.AddComponent<SpeedBooster>();
+                break;
+            case PickupType.Points:
+                other.gameObject.AddComponent<DoublePoints>();
                 break;
 
             default:
