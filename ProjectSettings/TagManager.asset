@@ -44,6 +44,9 @@ TagManager:
   - name: Ground
     uniqueID: 2112211199
     locked: 0
+  - name: stairs
+    uniqueID: 3940851417
+    locked: 0
   - name: Player
     uniqueID: 1893025683
     locked: 0
