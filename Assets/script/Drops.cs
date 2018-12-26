@@ -16,7 +16,7 @@ public class Drops : MonoBehaviour {
     public void Spawn()
     {
         
-        int numb = Random.Range(0, 2);
+        int numb = Random.Range(0, 16);
         print(numb);
         if (numb == 10)
         {
@@ -34,7 +34,7 @@ public class Drops : MonoBehaviour {
                 Instantiate(prefabToSpawn, transform.position, rotationInRadians, parent);
             }
         }
-            if (numb == 1)
+            if (numb == 15)
             {
 
                 Vector3 rotationInDegrees = transform.eulerAngles;
