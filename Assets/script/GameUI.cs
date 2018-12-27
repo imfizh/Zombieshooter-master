@@ -7,6 +7,7 @@ public class GameUI : MonoBehaviour
     public Slider healthBar;
     public Text scoreText;
     public Text roundText;
+    public Text doorText;
     public int round = 1;
     public int playerScore = 0;
     private void OnEnable()
@@ -35,7 +36,7 @@ public class GameUI : MonoBehaviour
     {
         round += theRound;
         roundText.text = "ROUND: " + round.ToString();
-        //TimerEvent.round += 1;
+        
         
     }
 }
