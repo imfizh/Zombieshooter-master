@@ -24,6 +24,24 @@ public class HealthSystem : MonoBehaviour
             }
             
         }
+        if (player !=null)
+        {
+            InvokeRepeating("regen", 4, 50);
+
+        }
+    }
+    public void regen()
+    {
+        if (health < 4)
+        {
+            health += 1;
+            onDamaged.Invoke(health);
+        }
+        else
+        {
+            CancelInvoke("regen");
+        }
+        
     }
 }
 

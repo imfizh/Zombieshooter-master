@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 public class TimerEvent : MonoBehaviour
 {
-    public float time = 1;
+    public float time = 3;
     public bool repeat = false;
     public UnityEvent onTimerComplete;
   
