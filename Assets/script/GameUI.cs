@@ -15,6 +15,7 @@ public class GameUI : MonoBehaviour
         Player.OnUpdateHealth += UpdateHealthBar;
         AddScore.OnSendScore += UpdateScore;
         RoundController.OnSendRound += UpdateRound;
+        Doors.OnSendCost += UpdateCost;
     }
     private void OnDisable()
     {
@@ -30,13 +31,16 @@ public class GameUI : MonoBehaviour
     private void UpdateScore(int theScore)
     {
         playerScore += theScore;
-        scoreText.text = "POINTS: " + playerScore.ToString();
+        scoreText.text = playerScore.ToString();
     }
     public void UpdateRound(int theRound)
     {
         round += theRound;
-        roundText.text = "ROUND: " + round.ToString();
-        
-        
+        roundText.text = "ROUND: " + round.ToString();    
+    }
+    public void UpdateCost(int theCost)
+    {
+        playerScore = playerScore - theCost;
+        scoreText.text = playerScore.ToString();
     }
 }

@@ -7,26 +7,37 @@ public class Doors : MonoBehaviour {
 
     private GameUI GM;
     public GameObject door;
-    
-	void Start () {
+    public delegate void SendScore(int theCost);
+    public static event SendScore OnSendCost;
+    public int cost;
+    public int check;
+    void Start () {
         GM = GameObject.FindGameObjectWithTag("Canvas").GetComponent<GameUI>();
         
 	}
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        
-            print("yes");
         if (col.gameObject.name == "Player")
         {
-            
-            GM.doorText.text = ("[E] to open door (cost:750)");
-            if (Input.GetKeyDown("e"))
+            if (door == (gameObject.name == "door1" ))
             {
+                cost = 500;
+            }else if (door == (gameObject.name == "door2"))
+            {
+                cost = 1000;
+            }
+            else if (door == (gameObject.name == "door3"))
+            {
+                cost = 1500;
+            }
+            GM.doorText.text = ("[E] to open door (cost: " + cost + ")");
+            if (Input.GetKeyDown("e") && (System.Convert.ToInt32(GM.scoreText.text) > cost)) 
+            {
+               
+                OnSendCost(cost);
                 GM.doorText.text = (" ");
-                //door.GetComponent<CircleCollider2D>().isTrigger = false;
-                //Destroy(door.GetComponent<CircleCollider2D>());
-                //b.SetActive(false);
+                
                 Destroy(door);
             }
         }
@@ -35,12 +46,12 @@ public class Doors : MonoBehaviour {
     {
         if (col.CompareTag("Player"))
         {
-            if (Input.GetKeyDown("e"))
+            if (Input.GetKeyDown("e") && (System.Convert.ToInt32(GM.scoreText.text) > cost))
             {
+              
+                OnSendCost(cost);
                 GM.doorText.text = (" ");
-                //b.SetActive(false);
-                //door.GetComponent<CircleCollider2D>().isTrigger = false;
-                //Destroy(door.GetComponent<CircleCollider2D>());
+                
                 Destroy(door);
             }
         }
