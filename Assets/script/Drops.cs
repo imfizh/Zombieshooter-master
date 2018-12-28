@@ -17,7 +17,7 @@ public class Drops : MonoBehaviour {
     {
         
         int numb = Random.Range(0, 16);
-        print(numb);
+
         if (numb == 10)
         {
 

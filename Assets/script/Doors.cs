@@ -11,6 +11,10 @@ public class Doors : MonoBehaviour {
     public static event SendScore OnSendCost;
     public int cost;
     public int check;
+    public static bool a = false;
+    public static bool b = false;
+    public static bool c = false;
+    
     void Start () {
         GM = GameObject.FindGameObjectWithTag("Canvas").GetComponent<GameUI>();
         
@@ -23,13 +27,16 @@ public class Doors : MonoBehaviour {
             if (door == (gameObject.name == "door1" ))
             {
                 cost = 500;
+                
             }else if (door == (gameObject.name == "door2"))
             {
                 cost = 1000;
+                
             }
             else if (door == (gameObject.name == "door3"))
             {
                 cost = 1500;
+                
             }
             GM.doorText.text = ("[E] to open door (cost: " + cost + ")");
             if (Input.GetKeyDown("e") && (System.Convert.ToInt32(GM.scoreText.text) > cost)) 
@@ -37,7 +44,21 @@ public class Doors : MonoBehaviour {
                
                 OnSendCost(cost);
                 GM.doorText.text = (" ");
-                
+                if (door == (gameObject.name == "door1"))
+                {
+                    a = true;
+
+                }
+                else if (door == (gameObject.name == "door2"))
+                {
+                    b = true;
+
+                }
+                else if (door == (gameObject.name == "door3"))
+                {
+                    c = true;
+
+                }
                 Destroy(door);
             }
         }
@@ -51,7 +72,21 @@ public class Doors : MonoBehaviour {
               
                 OnSendCost(cost);
                 GM.doorText.text = (" ");
-                
+                if (door == (gameObject.name == "door1"))
+                {
+                    a = true;
+
+                }
+                else if (door == (gameObject.name == "door2"))
+                {
+                    b = true;
+
+                }
+                else if (door == (gameObject.name == "door3"))
+                {
+                    c = true;
+
+                }
                 Destroy(door);
             }
         }
