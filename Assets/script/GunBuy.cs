@@ -10,11 +10,13 @@ public class GunBuy : MonoBehaviour {
     public int cost1 = 10;
     public GameObject p;
     public GameObject r;
-    
+    private Animator gunAnim;
+   
     void Start()
     {
         gm = GameObject.FindGameObjectWithTag("Canvas").GetComponent<GameUI>();
-
+        gunAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+        
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -25,9 +27,11 @@ public class GunBuy : MonoBehaviour {
             {
                 p.SetActive(false);
                 r.SetActive(true);
+                gunAnim.SetBool("IsRifle", true);
+                
                 OnSendCost1(cost1);
                 gm.doorText.text = (" ");
-                print("yes");
+                
             }
          }
     }
@@ -39,9 +43,11 @@ public class GunBuy : MonoBehaviour {
             {
                 p.SetActive(false);
                 r.SetActive(true);
+                gunAnim.SetBool("IsRifle", true);
+                
                 OnSendCost1(cost1);
                 gm.doorText.text = (" ");
-                print("yes");
+                
             }
         }
     }

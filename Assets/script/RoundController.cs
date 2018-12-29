@@ -58,6 +58,8 @@ public class RoundController : MonoBehaviour {
         {
             var.Add(7);
             var.Add(8);
+            var.Add(9);
+            var.Add(10);
         }
     }
 

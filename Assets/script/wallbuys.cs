@@ -7,7 +7,7 @@ public class wallbuys : MonoBehaviour {
     public GameObject r;
 	private void update()
     {
-        print("nig");
+       
         if (Input.GetKeyDown("e"))
         {
             print("yos");
