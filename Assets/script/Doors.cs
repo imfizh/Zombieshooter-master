@@ -39,7 +39,7 @@ public class Doors : MonoBehaviour {
                 
             }
             GM.doorText.text = ("[E] to open door (cost: " + cost + ")");
-            if (Input.GetKeyDown("e") && (System.Convert.ToInt32(GM.scoreText.text) > cost)) 
+            if (Input.GetKeyDown("e") && (System.Convert.ToInt32(GM.scoreText.text) >= cost)) 
             {
                
                 OnSendCost(cost);
@@ -67,7 +67,7 @@ public class Doors : MonoBehaviour {
     {
         if (col.CompareTag("Player"))
         {
-            if (Input.GetKeyDown("e") && (System.Convert.ToInt32(GM.scoreText.text) > cost))
+            if (Input.GetKeyDown("e") && (System.Convert.ToInt32(GM.scoreText.text) >= cost))
             {
               
                 OnSendCost(cost);

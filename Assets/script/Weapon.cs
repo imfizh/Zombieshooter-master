@@ -8,6 +8,7 @@ public class Weapon : MonoBehaviour {
     public Transform bulletSpawn;
     public float fireTime = 0.5f;
     private bool isFiring = false;
+    
     private void SetFiring()
     {
         isFiring = false;
@@ -15,7 +16,10 @@ public class Weapon : MonoBehaviour {
     private void Fire()
     {
         isFiring = true;
-        Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+        
+            Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+        
+        
         
         if (GetComponent<AudioSource>() != null)
         {
@@ -30,6 +34,7 @@ public class Weapon : MonoBehaviour {
             if (!isFiring)
             {
                 Fire();
+               
             }
         }
     }
