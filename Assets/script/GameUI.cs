@@ -17,6 +17,7 @@ public class GameUI : MonoBehaviour
         RoundController.OnSendRound += UpdateRound;
         Doors.OnSendCost += UpdateCost;
         GunBuy.OnSendCost1 += UpdateCost;
+        UpgradeGun.OnSendCost2 += UpdateCost;
     }
     private void OnDisable()
     {

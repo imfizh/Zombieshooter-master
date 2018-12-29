@@ -11,7 +11,7 @@ public class GunBuy : MonoBehaviour {
     public GameObject p;
     public GameObject r;
     private Animator gunAnim;
-   
+    public static bool yos = false;
     void Start()
     {
         gm = GameObject.FindGameObjectWithTag("Canvas").GetComponent<GameUI>();
@@ -28,7 +28,7 @@ public class GunBuy : MonoBehaviour {
                 p.SetActive(false);
                 r.SetActive(true);
                 gunAnim.SetBool("IsRifle", true);
-                
+                yos = true;
                 OnSendCost1(cost1);
                 gm.doorText.text = (" ");
                 
@@ -44,7 +44,7 @@ public class GunBuy : MonoBehaviour {
                 p.SetActive(false);
                 r.SetActive(true);
                 gunAnim.SetBool("IsRifle", true);
-                
+                yos = true;
                 OnSendCost1(cost1);
                 gm.doorText.text = (" ");
                 
