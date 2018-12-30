@@ -10,6 +10,7 @@ public struct HighScores
 public class HighScoreUI : MonoBehaviour
 {
     public Text highScoreText;
+    public Text RoundTEXT;
     public HighScores highScore;
     private int totalHighScores = 5;
     public void Start()
@@ -39,6 +40,7 @@ public class HighScoreUI : MonoBehaviour
         }
         highScore.scores.Sort();
         highScore.scores.Reverse(0, totalHighScores);
+        RoundTEXT.text = "Round: " + GameUI.round1; 
         highScoreText.text = "High Score:\n";
         for (int i = 0; i < totalHighScores; i++)
         {

@@ -224,6 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highScoreText: {fileID: 1939067585}
+  RoundTEXT: {fileID: 1601269513}
   highScore:
     scores: 
 --- !u!1 &956049224
@@ -753,7 +754,7 @@ GameObject:
   - component: {fileID: 1601269514}
   - component: {fileID: 1601269513}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: Round
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

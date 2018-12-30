@@ -9,7 +9,7 @@ public class GameUI : MonoBehaviour
     public Text roundText;
     public Text doorText;
     public int round = 1;
-    public static int round1=0;
+    public static int round1=1;
     public int playerScore = 0;
     private void OnEnable()
     {
