@@ -12,8 +12,7 @@ public class UpgradeGun : MonoBehaviour {
     public GameObject ru;
     public GameObject pu;
     private Animator gunAnim;
-    //public GameObject pu;
-    // Use this for initialization
+    
     void Start () {
         mg = GameObject.FindGameObjectWithTag("Canvas").GetComponent<GameUI>();
         gunAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
@@ -33,12 +32,14 @@ public class UpgradeGun : MonoBehaviour {
                 child = GameObject.Find("Pistol");
             }
             mg.doorText.text = ("[E] to upgrade gun (cost: " + cost2 + ")");
-            if (Input.GetKeyDown("e") && (System.Convert.ToInt32(mg.scoreText.text) >= cost2))
+            //&& (ru.activeInHierarchy == false) && (pu.activeInHierarchy == false)
+            if (Input.GetKeyDown("e") && (System.Convert.ToInt32(mg.scoreText.text) >= cost2) && (ru.activeInHierarchy == false) && (pu.activeInHierarchy == false))
             {
                 if (GunBuy.yos == true)
                 {
                     gunAnim.SetBool("IsRifleUpgrade", true);
                     ru.SetActive(true);
+                    
                 }
                 else
                 {
@@ -67,7 +68,7 @@ public class UpgradeGun : MonoBehaviour {
             {
                 child = GameObject.Find("Pistol");
             }
-            if (Input.GetKeyDown("e") && (System.Convert.ToInt32(mg.scoreText.text) >= cost2))
+            if (Input.GetKeyDown("e") && (System.Convert.ToInt32(mg.scoreText.text) >= cost2) && (ru.activeInHierarchy == false) && (pu.activeInHierarchy == false))
             {
 
                 if (GunBuy.yos == true)

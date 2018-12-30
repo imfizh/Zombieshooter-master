@@ -10,8 +10,11 @@ public class GunBuy : MonoBehaviour {
     public int cost1 = 10;
     public GameObject p;
     public GameObject r;
+    public GameObject pu;
+    
     private Animator gunAnim;
     public static bool yos = false;
+    public bool log = false;
     void Start()
     {
         gm = GameObject.FindGameObjectWithTag("Canvas").GetComponent<GameUI>();
@@ -23,12 +26,14 @@ public class GunBuy : MonoBehaviour {
         if (col.gameObject.name == "Player")
         {
             gm.doorText.text = ("[E] to buy MP40 (cost: " + cost1 + ")");
-            if (Input.GetKeyDown("e") && (System.Convert.ToInt32(gm.scoreText.text) >= cost1))
+            if (Input.GetKeyDown("e") && (System.Convert.ToInt32(gm.scoreText.text) >= cost1) && (log == false))
             {
                 p.SetActive(false);
+                pu.SetActive(false);
                 r.SetActive(true);
                 gunAnim.SetBool("IsRifle", true);
                 yos = true;
+                log = true;
                 OnSendCost1(cost1);
                 gm.doorText.text = (" ");
                 
@@ -39,12 +44,14 @@ public class GunBuy : MonoBehaviour {
     {
         if (col.gameObject.name == "Player")
         {
-            if (Input.GetKeyDown("e") && (System.Convert.ToInt32(gm.scoreText.text) >= cost1))
+            if (Input.GetKeyDown("e") && (System.Convert.ToInt32(gm.scoreText.text) >= cost1) && (log == false))
             {
                 p.SetActive(false);
+                pu.SetActive(false);
                 r.SetActive(true);
                 gunAnim.SetBool("IsRifle", true);
                 yos = true;
+                log = true;
                 OnSendCost1(cost1);
                 gm.doorText.text = (" ");
                 

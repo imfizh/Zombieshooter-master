@@ -15,6 +15,7 @@ public class RoundController : MonoBehaviour {
     public UnityEvent onRoundComplete;
     public GameObject zombie;
     private TimerEvent increase;
+    public int i;
     private void Start()
     {
         zombie.GetComponent<HealthSystem>().health = 6;
@@ -30,7 +31,7 @@ public class RoundController : MonoBehaviour {
         int randomSpawnPoint = var[Random.Range(0, var.Count)];
         print(randomSpawnPoint);
         Transform spawner = (transform.GetChild(randomSpawnPoint));
-
+        
         spawner.GetComponent<Spawner>().Spawn();
         
         if (totalZombies < 1)
@@ -67,11 +68,18 @@ public class RoundController : MonoBehaviour {
         {
             var.Add(3);
             var.Add(4);
+            i++;
+            if (i == 3)
+            {
+                Doors.a = false;
+            }
+            
         }
         if (Doors.b == true)
         {
             var.Add(5);
             var.Add(6);
+            Doors.b = false;
         }
         if (Doors.c == true)
         {
@@ -79,6 +87,7 @@ public class RoundController : MonoBehaviour {
             var.Add(8);
             var.Add(9);
             var.Add(10);
+            Doors.c = false;
         }
     }
 
