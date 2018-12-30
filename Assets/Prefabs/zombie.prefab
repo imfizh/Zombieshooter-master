@@ -162,7 +162,7 @@ MonoBehaviour:
   repathRate: 1
   canSearch: 1
   canMove: 1
-  speed: 2
+  speed: 2.5
   orientation: 1
   enableRotation: 1
   rotationSpeed: 10
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1fb90f2feb96fd40870f2d27c8fb981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 6
+  health: 8
   onDie:
     m_PersistentCalls:
       m_Calls:

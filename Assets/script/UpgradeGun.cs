@@ -10,6 +10,7 @@ public class UpgradeGun : MonoBehaviour {
     public static event SendScore OnSendCost2;
     private GameObject child;
     public GameObject ru;
+    public GameObject pu;
     private Animator gunAnim;
     //public GameObject pu;
     // Use this for initialization
@@ -34,11 +35,20 @@ public class UpgradeGun : MonoBehaviour {
             mg.doorText.text = ("[E] to upgrade gun (cost: " + cost2 + ")");
             if (Input.GetKeyDown("e") && (System.Convert.ToInt32(mg.scoreText.text) >= cost2))
             {
+                if (GunBuy.yos == true)
+                {
+                    gunAnim.SetBool("IsRifleUpgrade", true);
+                    ru.SetActive(true);
+                }
+                else
+                {
+                    gunAnim.SetBool("IsPistolUpgrade", true);
+                    pu.SetActive(true);
+                }
                 
-                gunAnim.SetBool("IsRifleUpgrade", true);
 
                 child.SetActive(false);
-                ru.SetActive(true);
+                
                 OnSendCost2(cost2);
                 mg.doorText.text = (" ");
 
@@ -60,9 +70,18 @@ public class UpgradeGun : MonoBehaviour {
             if (Input.GetKeyDown("e") && (System.Convert.ToInt32(mg.scoreText.text) >= cost2))
             {
 
-                gunAnim.SetBool("IsRifleUpgrade", true);
+                if (GunBuy.yos == true)
+                {
+                    gunAnim.SetBool("IsRifleUpgrade", true);
+                    ru.SetActive(true);
+                }
+                else
+                {
+                    gunAnim.SetBool("IsPistolUpgrade", true);
+                    pu.SetActive(true);
+                }
                 child.SetActive(false);
-                ru.SetActive(true);
+                
                 OnSendCost2(cost2);
                 mg.doorText.text = (" ");
 

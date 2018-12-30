@@ -9,6 +9,7 @@ public class GameUI : MonoBehaviour
     public Text roundText;
     public Text doorText;
     public int round = 1;
+    public static int round1=0;
     public int playerScore = 0;
     private void OnEnable()
     {
@@ -38,6 +39,7 @@ public class GameUI : MonoBehaviour
     public void UpdateRound(int theRound)
     {
         round += theRound;
+        round1 = round;
         roundText.text = "ROUND: " + round.ToString();    
     }
     public void UpdateCost(int theCost)

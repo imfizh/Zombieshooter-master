@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Pathfinding;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -12,8 +13,15 @@ public class RoundController : MonoBehaviour {
     public int Round = 1;
     List<int> var = new List<int>(new int[] {0, 1, 2 });
     public UnityEvent onRoundComplete;
-
-	public void SpawnZombie ()
+    public GameObject zombie;
+    private TimerEvent increase;
+    private void Start()
+    {
+        zombie.GetComponent<HealthSystem>().health = 6;
+        zombie.GetComponent<AILerp>().speed = 2;
+        increase = GameObject.FindGameObjectWithTag("Round Controller").GetComponent<TimerEvent>();
+    }
+    public void SpawnZombie ()
     {
         totalZombies--;
         //transform.childCount
@@ -34,12 +42,23 @@ public class RoundController : MonoBehaviour {
     }
     public void boi()
     {
-        if (totalZombies < 24)
+        if (add< 24)
         {
             add = add + 6;
-            totalZombies = totalZombies + add;
         }
-       
+        totalZombies = totalZombies + add;
+        if (GameUI.round1 == 3)
+        {
+            zombie.GetComponent<HealthSystem>().health = 8;
+            zombie.GetComponent<AILerp>().speed = 2.5f;
+            increase.time = 1.5f;
+        }
+        if (GameUI.round1 == 7)
+        {
+            zombie.GetComponent<HealthSystem>().health = 10;
+            zombie.GetComponent<AILerp>().speed = 3f;
+            increase.time = 0.75f;
+        }
         OnSendRound(Round);
     }
     public void whichSpawners()
