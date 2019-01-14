@@ -11,14 +11,16 @@ public class Doors : MonoBehaviour {
     public static event SendScore OnSendCost;
     public int cost;
     public int check;
-    public static bool a = false;
-    public static bool b = false;
-    public static bool c = false;
+    public static bool a;
+    public static bool b;
+    public static bool c;
     
     void Start () {
-        GM = GameObject.FindGameObjectWithTag("Canvas").GetComponent<GameUI>();
-        
-	}
+       GM = GameObject.FindGameObjectWithTag("Canvas").GetComponent<GameUI>();
+        a = false;
+        b = false;
+        c = false;
+     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -38,6 +40,7 @@ public class Doors : MonoBehaviour {
                 cost = 1500;
                 
             }
+            
             GM.doorText.text = ("[E] to open door (cost: " + cost + ")");
             if (Input.GetKeyDown("e") && (System.Convert.ToInt32(GM.scoreText.text) >= cost)) 
             {
@@ -67,6 +70,7 @@ public class Doors : MonoBehaviour {
     {
         if (col.CompareTag("Player"))
         {
+            
             if (Input.GetKeyDown("e") && (System.Convert.ToInt32(GM.scoreText.text) >= cost))
             {
               
@@ -95,6 +99,7 @@ public class Doors : MonoBehaviour {
     {
         if (col.CompareTag("Player"))
         {
+            
             GM.doorText.text = (" ");
         }
     }

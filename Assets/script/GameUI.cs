@@ -9,8 +9,12 @@ public class GameUI : MonoBehaviour
     public Text roundText;
     public Text doorText;
     public int round = 1;
-    public static int round1=1;
+    public static int round1;
     public int playerScore = 0;
+    private void Start()
+    {
+        round1 = 1;
+    }
     private void OnEnable()
     {
         Player.OnUpdateHealth += UpdateHealthBar;
@@ -24,8 +28,12 @@ public class GameUI : MonoBehaviour
     {
         Player.OnUpdateHealth -= UpdateHealthBar;
         AddScore.OnSendScore -= UpdateScore;
-        //HealthSystem.OnSendRound += UpdateRound;
-        PlayerPrefs.SetInt("Score", playerScore);
+        RoundController.OnSendRound -= UpdateRound;
+        Doors.OnSendCost -= UpdateCost;
+        GunBuy.OnSendCost1 -= UpdateCost;
+        UpgradeGun.OnSendCost2 -= UpdateCost;
+        DoublePoints.Dubpoints = false;
+        PlayerPrefs.SetInt("Score", round);
     }
     private void UpdateHealthBar(int health)
     {

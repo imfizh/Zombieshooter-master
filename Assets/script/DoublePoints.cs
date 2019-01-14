@@ -6,13 +6,13 @@ public class DoublePoints : MonoBehaviour {
 
     private float time = 8;
     public static bool Dubpoints = false;
+    
 	void Start () {
         Dubpoints = true;
         Invoke("TimeDone", time);
     }
-	
-	
-	void TimeDone() {
+
+    void TimeDone() {
         Dubpoints = false;
         Destroy(this);
 	}

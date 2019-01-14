@@ -9,6 +9,7 @@ public class AddScore : MonoBehaviour {
     public int score = 10;
     public int DeathScore = 80;
     private bool scoreSent = false;
+   
     public void OnAddScore()
     {
         if (OnSendScore != null)
@@ -24,12 +25,16 @@ public class AddScore : MonoBehaviour {
             }
         }
     }
-        public void Points()
+    public void Points()
     {
         if (DoublePoints.Dubpoints == true)
         {
             OnSendScore(score * 2);
         }
-        OnSendScore(score);
+        else
+        {
+            OnSendScore(score);
+        }
+        
     }
 }

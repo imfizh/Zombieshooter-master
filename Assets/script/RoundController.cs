@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class RoundController : MonoBehaviour {
 
@@ -16,14 +17,17 @@ public class RoundController : MonoBehaviour {
     public GameObject zombie;
     private TimerEvent increase;
     public int i;
+    
     private void Start()
     {
         zombie.GetComponent<HealthSystem>().health = 6;
         zombie.GetComponent<AILerp>().speed = 2;
         increase = GameObject.FindGameObjectWithTag("Round Controller").GetComponent<TimerEvent>();
+        
     }
     public void SpawnZombie ()
     {
+        
         totalZombies--;
         //transform.childCount
         //int randomSpawnPoint = Random.Range(0, var.count);
