@@ -16,5 +16,7 @@ Assets used:
 - https://opengameart.org/content/backgrounds-topdown-games
 - https://www.gdquest.com/product/krita/brushes/version-14/bush_1.png
 - https://i.pinimg.com/originals/58/22/1c/58221c7c2cfc400d870844d7f221b183.png
+- https://www.youtube.com/watch?v=3n04T3_QUhg
+- https://www.youtube.com/watch?v=lk5iMgG-WJI
 
 For this project I began by using a different GIT repository titled zombiehooter, however due to some errors I had to make a new repository.
